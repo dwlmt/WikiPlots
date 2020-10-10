@@ -76,7 +76,7 @@ with jsonlines.open(outfilename, mode='w') as writer:
 				plot_dict = {}
 				# ASSERT: I have a plot
 				# Record the name of the article with the plot
-				plot_dict['title'] = j['title'].encode('utf-8')
+				plot_dict['title'] = j['title'].decode('utf-8')
 				# remove newlines
 				plot = plot.replace('\n', ' ').replace('\r', '').strip()
 				# remove html tags (probably mainly hyperlinks)
@@ -112,7 +112,7 @@ with jsonlines.open(outfilename, mode='w') as writer:
 				stripped_sentences = []
 				for s in sentences:
 					if len(s.strip()) > 0:
-						stripped_sentences.append(f"{s.strip().encode('utf-8')}.")
+						stripped_sentences.append(f"{s.strip().decode('utf-8')}.")
 
 				plot_dict['text'] = " ".join(stripped_sentences)
 				print(plot_dict)
