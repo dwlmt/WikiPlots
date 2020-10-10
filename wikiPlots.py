@@ -76,7 +76,7 @@ with jsonlines.open(outfilename, mode='w') as writer:
 				plot_dict = {}
 				# ASSERT: I have a plot
 				# Record the name of the article with the plot
-				plot_dict['title'] = j['title'].decode('utf-8')
+				plot_dict['title'] = j['title']
 				# remove newlines
 				plot = plot.replace('\n', ' ').replace('\r', '').strip()
 				# remove html tags (probably mainly hyperlinks)
