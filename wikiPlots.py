@@ -26,7 +26,7 @@ for dirname, dirnames, filenames in os.walk(os.path.join('.', startdir)):
 		if filename[0] != '.':
 			files.append(os.path.join(dirname, filename))
 
-with jsonlines.open(outfilename, mode='w', encoding="utf8") as writer:
+with jsonlines.open(outfilename, mode='w') as writer:
 
 	# Opened the title file
 	# Walk through each file. Each file has a json for each wikipedia article. Look for jsons with "plot" subheaders
