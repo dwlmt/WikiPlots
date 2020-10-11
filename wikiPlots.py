@@ -115,7 +115,6 @@ with jsonlines.open(outfilename, mode='w') as writer:
 				plot_dict['id'] = j['id']
 				plot_dict['title'] = j['title']
 				plot_dict['url'] = j['url']
-				plot_dict['revid'] = j['revid']
 
 				clean_and_extract_sentences()
 				#print >> outfile, j['title'].encode('utf-8') #FOR DEBUGGING
