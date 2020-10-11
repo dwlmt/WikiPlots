@@ -117,6 +117,6 @@ with jsonlines.open(outfilename, mode='w') as writer:
 				text = " ".join(stripped_sentences)
 				for r in ["n::::Plot.","n:::Plot.","t Summary","t summary"]:
 					text = text.replace(r,"")
-				plot_dict['text'] = text
+				plot_dict['text'] = text.strip()
 				print(plot_dict)
 				writer.write(plot_dict)
