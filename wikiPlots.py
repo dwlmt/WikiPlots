@@ -115,8 +115,12 @@ with jsonlines.open(outfilename, mode='w') as writer:
 						stripped_sentences.append(f"{s.strip()}.")
 
 				text = " ".join(stripped_sentences)
-				for r in ["n::::Plot.","n:::Plot.","t Summary","t summary"]:
+				for r in ["n::::Plot","n:::Plot","t Summary","t summary",":The plot"]:
 					text = text.replace(r,"")
+
+				if text[0] == ".":
+					text = text[1:]
+
 				plot_dict['text'] = text.strip()
 				print(plot_dict)
 				writer.write(plot_dict)
