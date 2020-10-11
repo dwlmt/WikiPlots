@@ -12,9 +12,7 @@ set -e # fail fast
 # Activate Conda
 source /home/${USER}/miniconda3/bin/activate ParlAI
 
-echo "I'm running on ${SLURM_JOB_NODELIST}"
-dt=$(date '+%d_%m_%y__%H_%M');
-echo ${dt}
+export CURRENT_TIME=$(date "+%Y_%m_%d_%H%M%S")
 
 # Env variables
 export STUDENT_ID=${USER}
