@@ -126,7 +126,7 @@ with jsonlines.open(outfilename, mode='w') as writer:
 						stripped_sentences.append(f"{s.strip()}.")
 
 				text = " ".join(stripped_sentences)
-				for r in ["n::::Plot","n:::Plot","t Summary","t summary",":The plot"]:
+				for r in ["n::::Plot","n:::Plot","t Summary","t summary",":The plot","Section::::Setting"]:
 					text = text.replace(r,"")
 
 				if text[0] == ".":
